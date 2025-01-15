@@ -1,0 +1,279 @@
+:root {
+    /* Colores */
+    --bitcoin-orange: #F7931A;
+    --soft-orange: #FFE9D4;
+    --secondary-blue: #1A9AF7;
+    --soft-blue: #E7F5FF;
+    --warm-black: #201E1C; 
+    --black: #282623;
+    --grey: #BABABA;
+    --off-white: #FAF8F7;
+    --just-white: #FFFFFF; 
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-family: 'DM Sans', sans-serif;
+}
+body{
+    background: linear-gradient(180deg, #eaedf6 11.19%, #a96ea6 61%);
+}
+.header-company-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10vh;
+}
+.img-backgorund{
+    width: 60px;
+    height: 60px;
+    background-image: url(/assets/img/logo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+main{
+    position: relative;
+    display: inline-flex;
+    width: 100%;
+    height: 90vh;
+}
+.background-pattern {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: calc(100vh - 60%);
+    background-image: url(/assets/img/background_pattern.png);
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
+    z-index: 1;
+    border-radius: 40% 40% 0 0;
+}
+.main-message-container,
+.main-charts-container {
+    position: relative;
+    height: 100%;
+    max-height: 77vh;
+    z-index: 2; 
+}
+.main-message-container{
+    width: 50%;
+    text-align: center;
+    align-items: center;
+    /*background: linear-gradient(228deg, #f6efe7 11.19%, #6e2b88 100%);*/
+}
+.main-card-container{
+    width: 90%;
+    height: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.woman-img{
+    position: absolute;
+    width: 187px;
+    height: 437px;
+    top: 78px;
+    left: calc(50% - 267px);
+    background-image: url(/assets/icons/character-1.svg);
+}
+
+.card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 320px;
+    height: 380px;
+    margin-left: 249px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.13);
+    opacity: 0; /* Inicialmente invisible */
+    transform: translateY(50px); /* Desplazadas hacia abajo */
+    transition: opacity 5.5s ease, transform 5.5s ease; /* Transición para la aparición */
+    
+}
+/* Clase visible para activar la transición */
+.card.visible {
+    opacity: 1; /* Hacer visible la tarjeta */
+    transform: translateY(0); /* Restablecer la posición */
+}
+/* Estilo del color en la parte superior de la tarjeta (ahora es estático) */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 2%;
+    width: 95%;
+    height: 120px;
+    z-index: 1;
+    border-radius: 10px 10px 0 0;
+    background: #8c20a2;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.13);
+}
+
+/* Eliminar el efecto de movimiento al pasar el cursor */
+.card:hover {
+    transform: none; /* Se elimina el movimiento */
+    z-index: 10;
+}
+/* Estilo de la imagen del doctor */
+.card .img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    z-index: 10;
+    transform: translateY(50px);
+    border: 10px solid #fff;
+    overflow: hidden;
+    position: absolute;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    /* Estilo de la imagen dentro del círculo, asegurando que se centre correctamente */
+    .card .img img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; /* Esta propiedad mantiene la proporción de la imagen sin estirarla */
+    }
+    
+/* Estilo para el contenido de la tarjeta */
+.content {
+    width: 100%;
+    height: 100%;
+    transform: translateY(170px);
+    display: flex;
+    flex-direction: column;
+    z-index: 20;
+    align-items: center;
+}
+
+/* Estilo de la descripción del doctor */
+.content p {
+    margin: 0;
+    font-size: 14px;
+    color: #777;
+}
+.content h3 {
+    font-size: 1.4rem; 
+
+}
+.box h4 {
+    font-size: 1.4rem; 
+    text-align: center; 
+}
+
+/* Estilo del contenedor de los detalles (experiencia, pacientes) */
+.center {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Estilo para las cajas de información (experiencia, pacientes) */
+.box {
+    padding: 10px 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.box:hover {
+    background-color: rgba(128, 128, 128, 0.137);
+}
+
+/* Estilo del botón de acción */
+.btn {
+    width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    transform: translateY(10px);
+    background: #8c20a2;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.13);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efecto al pasar el cursor sobre el botón */
+.btn:hover {
+    background-color: #ff9900;
+    transform: scale(1.05);
+}
+    
+
+.main-charts-container{
+    width: 50%;
+    text-align: center;
+    align-items: center;
+    /*background: linear-gradient(492deg, #f6efe7 11.19%, #6e2b88 100%);*/
+}
+.main-detail-container{
+    width: 90%;
+    height: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.chart-detail--info{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 320px;
+    height: 380px;
+}
+.chart-detail--title{
+    position: absolute;
+    width: 40px;
+    /* height: 31px; */
+    top: 89px;
+    left: -101px;
+    /* left: calc(50% - 20px);*/
+}
+.chart-detail--title h2{
+    margin-bottom: 20px;
+    font-size: 4.4rem;
+    font-weight: bold;
+    line-height: 3.6rem;
+    color: black;
+}
+.man-img{
+    position: absolute;
+    width: 157px;
+    height: 447px;
+    top: -10px;
+    left: calc(50% + 175px);
+    background-image: url(/assets/icons/character-2.svg);
+}
+.charts-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 100%;
+    max-width: 325px;
+}
+
+.charts-container img{
+    width: auto;
+    max-width: 281px;
+    height: auto;
+    max-height: 130px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
